@@ -6,6 +6,9 @@ return [
         'dbname' => 'laracastdb',
         'charset' => 'utf8mb4'
     ],
+    'services' => [
 
+    ],
+    
 ];
 ?>

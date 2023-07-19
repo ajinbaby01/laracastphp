@@ -8,7 +8,9 @@ $config = require('config.php');
 
 $db = new Database($config['database'], 'ajin', '123456');
 
-$posts = $db->query("select * from posts")->fetchAll();
+$query = "select * from posts";
+
+$posts = $db->query($query)->fetchAll();
 
 dd($posts);
 
