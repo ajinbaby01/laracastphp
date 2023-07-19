@@ -5,6 +5,8 @@
                 Home
             <?php elseif (isUrl('/laracastphp/about')): ?>
                 About
+            <?php elseif (isUrl('/laracastphp/notes')): ?>
+                Notes
             <?php elseif (isUrl('/laracastphp/contact')): ?>
                 Contact
             <?php endif; ?>

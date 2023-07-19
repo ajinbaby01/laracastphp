@@ -5,6 +5,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $routes = [
     '/laracastphp/' => 'controllers/index.php',
     '/laracastphp/about' => 'controllers/about.php',
+    '/laracastphp/notes' => 'controllers/notes.php',
     '/laracastphp/contact' => 'controllers/contact.php'
 ];
 
