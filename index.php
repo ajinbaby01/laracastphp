@@ -2,14 +2,11 @@
 
 require 'functions.php';
 //require 'router.php';
+require 'Database.php';
 
-$dsn = 'mysql:host=localhost;port=3308;dbname=laracastdb;user=ajin;password=123456;charset=utf8mb4';
+$db = new Database();
 
-$pdo = new PDO($dsn);
-
-$statement = $pdo->prepare("select * from posts");
-$statement->execute();
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+$posts = $db->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);
 
 dd($posts);
 
