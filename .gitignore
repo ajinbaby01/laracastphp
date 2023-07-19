@@ -1,0 +1,9 @@
+*.log
+
+temp/
+
+.DS_Store
+
+*.json
+
+*.code-workspace
