@@ -9,14 +9,14 @@
                 <div>
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/laracastphpdemo/"
-                            class="<?= isUrl('/laracastphpdemo/') ? 'bg-gray-900' : null ?> text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                        <a href="/laracastphp/"
+                            class="<?= isUrl('/laracastphp/') ? 'bg-gray-900' : null ?> text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                             aria-current="page">Home</a>
                         <a href="about"
-                            class="<?= isUrl('/laracastphpdemo/about') ? 'bg-gray-900' : null ?> text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About
+                            class="<?= isUrl('/laracastphp/about') ? 'bg-gray-900' : null ?> text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About
                             Us</a>
                         <a href="contact"
-                            class="<?= isUrl('/laracastphpdemo/contact') ? 'bg-gray-900' : null ?> text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact
+                            class="<?= isUrl('/laracastphp/contact') ? 'bg-gray-900' : null ?> text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact
                             Us</a>
                     </div>
                 </div>

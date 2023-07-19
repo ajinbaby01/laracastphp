@@ -6,7 +6,7 @@
         <h1 class="text-2xl font-bold">Sorry. Page not found.</h1>
 
         <p class="mt-4">
-            <a href="/laracastphpdemo/" class="text-blue-700 underline">Go back home</a>
+            <a href="/laracastphp/" class="text-blue-700 underline">Go back home</a>
         </p>
     </div>
 </main>
