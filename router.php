@@ -3,9 +3,9 @@
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $routes = [
-    '/laracastphp/' => 'controllers/index.php',
-    '/laracastphp/about' => 'controllers/about.php',
-    '/laracastphp/contact' => 'controllers/contact.php'
+    '/laracastphpdemo/' => 'controllers/index.php',
+    '/laracastphpdemo/about' => 'controllers/about.php',
+    '/laracastphpdemo/contact' => 'controllers/contact.php'
 ];
 
 function abort($responseCode = 404)
