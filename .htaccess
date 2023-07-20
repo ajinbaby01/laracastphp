@@ -1,2 +1,6 @@
 DirectoryIndex index.php
-ErrorDocument 404 /laracastphp/
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ ./index.php/ [L,QSA]
