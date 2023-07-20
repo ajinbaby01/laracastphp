@@ -1,6 +1,7 @@
 <?php
 
 $heading = "Note";
+$currentUserId = 2;
 
 require 'Database.php';
 
@@ -19,8 +20,8 @@ if(! $note){
     abort();
 }
 
-if($note['user_id'] === 1){
-    abort(403);
+if($note['user_id'] !== $currentUserId){
+    abort(Response::HTTP_FORBIDDEN);
 }
 
 require "views/note.view.php";

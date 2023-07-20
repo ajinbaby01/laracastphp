@@ -10,7 +10,7 @@ $routes = [
     '/laracastphp/contact' => 'controllers/contact.php'
 ];
 
-function abort($responseCode = 404)
+function abort($responseCode = Response::HTTP_NOT_FOUND)
 {
     http_response_code($responseCode);
     require "views/{$responseCode}.php";
