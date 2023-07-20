@@ -1,5 +1,7 @@
 <?php
 
+$heading = "Notes";
+
 require 'Database.php';
 
 $config = require('config.php');
