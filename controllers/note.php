@@ -1,3 +1,7 @@
 <?php
 
-require "views/note.view.php";
+$heading = 'Note';
+
+require('views/contact.view.php')
+
+?>

@@ -1,1 +1,7 @@
-<?php require 'views/about.view.php' ?>
+<?php
+
+$heading = 'About';
+
+require 'views/about.view.php'
+
+?>

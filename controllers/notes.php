@@ -12,4 +12,6 @@ $query = "select * from notes where user_id = 1";
 
 $notes = $db->query($query)->fetchAll();
 
+$heading = 'Notes';
+
 require "views/notes.view.php";
