@@ -1,7 +1,3 @@
 <?php
 
-$heading = 'Home';
-
-require('views/contact.view.php')
-
-?>
+require "views/index.view.php";
