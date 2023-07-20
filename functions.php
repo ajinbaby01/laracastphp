@@ -12,4 +12,11 @@ function dd($array)
     echo '</pre>';
     exit;
 }
+
+function authorize($condition)
+{
+    if (!$condition) {
+        abort(Response::HTTP_FORBIDDEN);
+    }
+}
 ?>
