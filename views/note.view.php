@@ -4,7 +4,9 @@
 
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        This is the Home page.
+        <p>
+            <?php dd($note);?>
+        </p>
     </div>
 </main>
 <?php require 'views/partials/footer.php' ?>
