@@ -14,13 +14,9 @@ $query = "select * from notes where id = :id";
 
 $note = $db->query($query, [
     ':id' => $_GET['id']
-    ])->fetch();
+])->findOrFail();
 
-if(! $note){
-    abort();
-}
-
-if($note['user_id'] !== $currentUserId){
+if ($note['user_id'] !== $currentUserId) {
     abort(Response::HTTP_FORBIDDEN);
 }
 
