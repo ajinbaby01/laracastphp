@@ -8,8 +8,7 @@ $config = require('config.php');
 
 $db = new Database($config['database'], 'ajin', '123456');
 
-// $id = $_GET['id'];
-$query = "select * from notes where user_id = 1";
+$query = "select * from notes where user_id = 2";
 
 
 $notes = $db->query($query)->fetchAll();
