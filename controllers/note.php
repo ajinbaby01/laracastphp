@@ -1,7 +1,7 @@
 <?php
 
 $heading = "Note";
-$currentUserId = 2;
+$currentUserId = 1;
 
 require 'Database.php';
 
