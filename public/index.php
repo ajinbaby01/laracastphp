@@ -12,6 +12,9 @@ spl_autoload_register(function ($class) {
 });
 // Loads classes automatically when required
 
-require base_path('Core/router.php');
+$router = new Core\Router();
+require base_path('routes.php');
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+$router->route($uri);
 
 ?>
