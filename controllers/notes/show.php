@@ -7,8 +7,7 @@ $config = require base_path('config.php');
 
 $db = new Database($config['database'], 'ajin', '123456');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // form was submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { //form was submitted
 
     //making sure note deleted is by the current user
     $query = "select * from notes where id = :id";
