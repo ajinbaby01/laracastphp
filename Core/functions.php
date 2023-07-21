@@ -15,6 +15,13 @@ function dd($array)
     exit;
 }
 
+function abort($responseCode = Response::HTTP_NOT_FOUND)
+{
+    http_response_code($responseCode);
+    require base_path("views/{$responseCode}.php");
+    exit;
+}
+
 function authorize($condition)
 {
     if (!$condition) {
