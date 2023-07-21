@@ -1,4 +1,5 @@
 <?php
+use Core\Database;
 
 $currentUserId = 1;
 

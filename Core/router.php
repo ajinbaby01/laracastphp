@@ -1,5 +1,7 @@
 <?php
 
+use Core\Response;
+
 $routes = require base_path('routes.php');
 
 function abort($responseCode = Response::HTTP_NOT_FOUND)
