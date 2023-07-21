@@ -1,12 +1,12 @@
 <?php
 
 return [
-    '/laracastphp/' => 'controllers/index.php',
-    '/laracastphp/about' => 'controllers/about.php',
-    '/laracastphp/notes' => 'controllers/notes/index.php',
-    '/laracastphp/note' => 'controllers/notes/show.php',
-    '/laracastphp/notes/create' => 'controllers/notes/create.php',
-    '/laracastphp/contact' => 'controllers/contact.php'
+    '/' => 'controllers/index.php',
+    '/about' => 'controllers/about.php',
+    '/notes' => 'controllers/notes/index.php',
+    '/note' => 'controllers/notes/show.php',
+    '/notes/create' => 'controllers/notes/create.php',
+    '/contact' => 'controllers/contact.php'
 ];
 
 ?>
