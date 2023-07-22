@@ -42,13 +42,15 @@ class Router
         $this->add($uri, $controller, 'PUT');
     }
 
-    public function route($uri)
+    public function route($uri, $method)
     {
         foreach($this->routes as $route){
-            if($route['uri'] === $uri){
-                return require base_path($route['controller']);
+            if($route['uri'] === $uri && $route['method'] == $method){
+                require base_path($route['controller']);
             }
         }
+
+        abort();
     }
 
 }
