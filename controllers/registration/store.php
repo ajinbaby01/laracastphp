@@ -30,7 +30,7 @@ $user = $db->query($query, [
 
 if ( $user) {
     // if user is already registered/present in database
-    $_SESSION['logged_in'] = true;
+    $_SESSION['logged_in'] = true; // need to move it to login page
     $_SESSION['user'] = [
         'email' => $email
     ];
