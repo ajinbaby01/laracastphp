@@ -2,12 +2,10 @@
 
 // This controller is responsible for inserting data into database
 
-use Core\Database;
+use Core\App;
 use Core\Validator;
 
-$config = require base_path('config.php');
-
-$db = new Database($config['database'], 'ajin', '123456');
+$db = App::resolve('Core\Database');
 
 $errors = [];
 

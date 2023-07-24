@@ -1,12 +1,10 @@
 <?php
 
-use Core\Database;
+use Core\App;
 
 $currentUserId = 1;
 
-$config = require base_path('config.php');
-
-$db = new Database($config['database'], 'ajin', '123456');
+$db = App::resolve('Core\Database');
 
 //making sure note deleted is by the current user
 $query = "select * from notes where id = :id";
