@@ -1,7 +1,6 @@
 <?php
 
 // This controller is responsible for showing the 'Edit a Note' page
-
 use Core\App;
 use Core\Validator;
 
