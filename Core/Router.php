@@ -12,13 +12,16 @@ class Router
         $this->routes[] = [
             'uri' => $uri,
             'controller' => $controller,
-            'method' => $method
+            'method' => $method,
+            'middleware' => null
         ];
+
+        return $this;
     }
 
     public function get($uri, $controller)
     {
-        $this->add($uri, $controller, 'GET');
+        return $this->add($uri, $controller, 'GET');
 
     }
 
@@ -42,10 +45,31 @@ class Router
         $this->add($uri, $controller, 'PUT');
     }
 
+    public function only($key)
+    {
+        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
+        return $this;
+    }
+
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] == strtoupper($method)) {
+
+                if($route['middleware'] === 'guest'){
+                    if($_SESSION['user'] ?? false){
+                        header('location: /');
+                        exit;
+                    }
+                }
+                if($route['middleware'] === 'auth'){
+                    if(! $_SESSION['user'] ?? false){
+                        header('location: /');
+                        exit;
+                    }
+                }
+
+
                 return require base_path($route['controller']);
             }
         }
