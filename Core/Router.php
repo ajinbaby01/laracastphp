@@ -44,13 +44,20 @@ class Router
 
     public function route($uri, $method)
     {
-        foreach($this->routes as $route){
-            if($route['uri'] === $uri && $route['method'] == $method){
-                require base_path($route['controller']);
+        foreach ($this->routes as $route) {
+            if ($route['uri'] === $uri && $route['method'] == strtoupper($method)) {
+                return require base_path($route['controller']);
             }
         }
 
-        abort();
+        $this->abort();
+    }
+
+    protected function abort($responseCode = Response::HTTP_NOT_FOUND)
+    {
+        http_response_code($responseCode);
+        require base_path("views/{$responseCode}.php");
+        exit;
     }
 
 }
