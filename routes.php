@@ -8,6 +8,7 @@
 //     '/notes/create' => 'controllers/notes/create.php',
 //     '/contact' => 'controllers/contact.php'
 // ];
+//Old routes
 
 $router->get('/', 'controllers/index.php');
 $router->get('/about', 'controllers/about.php');
