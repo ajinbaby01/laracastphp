@@ -30,6 +30,10 @@ $user = $db->query($query, [
 
 if ( $user) {
     // if user is already registered/present in database
+    $_SESSION['logged_in'] = true;
+    $_SESSION['user'] = [
+        'email' => $email
+    ];
     header('location: /'); // Can redirect elsewhere
     exit;
 } else {
