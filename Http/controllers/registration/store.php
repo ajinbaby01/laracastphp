@@ -8,6 +8,7 @@ $password = $_POST['password'];
 
 $registerForm = new RegisterForm();
 if (!$registerForm->validate($email, $password)) {
+    // check if entered email and password is valid
     return view("registration/create.view.php", [
         'errors' => $registerForm->getErrors()
     ]);

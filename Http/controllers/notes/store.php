@@ -1,6 +1,6 @@
 <?php
 
-// This controller is responsible for inserting data into database
+// This controller is responsible for inserting user notes into the 'notes' database
 
 use Core\App;
 use Core\Validator;
@@ -22,11 +22,10 @@ if (empty($errors)) {
 
     header('location: /notes');
     exit;
-
 }
 
 //validation issue
-view('notes/create.view.php', [
+return view('notes/create.view.php', [
     'heading' => 'Create a Note',
     'errors' => $errors
 ]);
