@@ -4,6 +4,7 @@ namespace Http\Forms;
 
 use Core\App;
 use Core\Authenticator;
+use Core\Database;
 use Core\Validator;
 
 class RegisterForm
@@ -24,6 +25,28 @@ class RegisterForm
     public function getErrors()
     {
         return $this->errors;
+    }
+
+    public function setErrors($field, $message)
+    {
+        $this->errors[$field] = $message;
+    }
+
+    public function check($email)
+    { // check if user email is already registered with the website
+        $db = App::resolve(Database::class);
+
+        $query = "select * from users where email = :email";
+        $user = $db->query($query, [
+            'email' => $email
+        ])->find();
+
+        if ($user) {
+            // user is already registered and email exists in database
+            return true;
+        }
+
+        return false;
     }
 
     public function insert($email, $password)
