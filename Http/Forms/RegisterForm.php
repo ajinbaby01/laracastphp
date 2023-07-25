@@ -28,8 +28,8 @@ class RegisterForm
 
     public function insert($email, $password)
     {
-        $query = "insert into users(email, password) values(:email, :password)";
         $db = App::resolve('Core\Database');
+        $query = "insert into users(email, password) values(:email, :password)";
         $db->query($query, [
             'email' => $email,
             'password' => password_hash($password, PASSWORD_DEFAULT)
