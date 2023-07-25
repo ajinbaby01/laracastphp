@@ -4,7 +4,7 @@
 use Core\App;
 use Core\Validator;
 
-$currentUserId = 1;
+$currentUserId = 1; // TODO => Make user_id dynamic
 
 $errors = [];
 

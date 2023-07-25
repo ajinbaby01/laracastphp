@@ -6,7 +6,7 @@ use Core\App;
 
 $db = App::resolve('Core\Database');
 
-$currentUserId = 1;
+$currentUserId = 1; // TODO => Make user_id dynamic
 // find the note
 $query = "select * from notes where id = :id";
 

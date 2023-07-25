@@ -2,7 +2,7 @@
 
 use Core\App;
 
-$currentUserId = 1;
+$currentUserId = 1; // TODO => Make user_id dynamic
 
 $db = App::resolve('Core\Database');
 
