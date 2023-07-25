@@ -28,15 +28,14 @@ $user = $db->query($query, [
     'email' => $email
 ])->find();
 
-if ( $user) {
+if ($user) {
+
     // if user is already registered/present in database
-    $_SESSION['logged_in'] = true; // need to move it to login page
-    $_SESSION['user'] = [
-        'email' => $email
-    ];
-    header('location: /'); // Can redirect elsewhere
+    login($user);
+    header('location: /'); // Can redirect elsewhere if needed
     exit;
 } else {
+
     // if user is not registered, insert into database
     $query = "insert into users(email, password) values(:email, :password)";
     $db->query($query, [
@@ -44,10 +43,9 @@ if ( $user) {
         'password' => password_hash($password, PASSWORD_DEFAULT)
     ]);
 
-    $_SESSION['logged_in'] = true;
-    $_SESSION['user'] = [
+    login([
         'email' => $email
-    ];
+    ]);
 
     header('location: /');
     exit;
