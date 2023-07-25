@@ -1,0 +1,1 @@
+The core functionality isn't necessarily unique to this particular application. It can be reused across multiple projects.
