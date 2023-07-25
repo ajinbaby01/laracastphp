@@ -1,8 +1,6 @@
 <?php
 
-use Core\App;
 use Core\Authenticator;
-use Core\Database;
 use Http\Forms\LoginForm;
 
 $email = $_POST['email'];
@@ -17,8 +15,7 @@ if (!$form->validate($email, $password)) {
 
 $auth = new Authenticator();
 if ($auth->attempt($email, $password)) {
-    header('location: /');
-    exit;
+    redirect('/');
 } else {
     return view('session/create.view.php', [
         'errors' => [

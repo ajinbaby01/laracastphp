@@ -33,8 +33,7 @@ if (empty($errors)) {
         'id' => $_POST['id']
     ]);
 
-    header('location: /notes');
-    exit;
+    redirect('/notes');
 
 }
 

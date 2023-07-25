@@ -1,8 +1,8 @@
 <?php
+use Core\Authenticator;
 
-logout();
+Authenticator::logout();
 
-header('location: /');
-exit;
+redirect('/');
 
 ?>

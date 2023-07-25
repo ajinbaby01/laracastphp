@@ -5,7 +5,7 @@ namespace Core;
 class Authenticator
 {
     public function attempt($email, $password)
-    {
+    { // attempts to check if user is present in database
         $db = App::resolve(Database::class);
 
         // check if email is already present in the database
@@ -18,7 +18,7 @@ class Authenticator
             // user is already registered and email exists in database
             if (password_verify($password, $user['password'])) {
                 // check if password is correct and log in
-                $this->login($user);
+                static::login($user);
                 return true;
             }
         }
@@ -26,7 +26,7 @@ class Authenticator
         return false;
     }
 
-    public function login($user)
+    public static function login($user)
     {
         $_SESSION['logged_in'] = true;
         $_SESSION['user'] = [
@@ -36,7 +36,7 @@ class Authenticator
         session_regenerate_id(true);
     }
 
-    public function logout()
+    public static function logout()
     {
         $_SESSION = []; // clear the $_SESSION superglobal
         session_destroy();
