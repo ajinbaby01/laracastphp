@@ -1,24 +1,16 @@
 <?php
+
 use Core\App;
 use Core\Database;
-use Core\Validator;
+use Http\Forms\LoginForm;
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$errors = [];
-
-if (!Validator::email($email)) {
-    $errors['email'] = 'Please provide a valid email address';
-}
-
-if (!Validator::string($password, 7, 255)) {
-    $errors['password'] = 'Please provide a valid password';
-}
-
-if (!empty($errors)) {
+$form = new LoginForm;
+if (!$form->validate($email, $password)) {
     return view("session/create.view.php", [
-        'errors' => $errors
+        'errors' => $form->getErrors()
     ]);
 }
 
@@ -30,7 +22,7 @@ $user = $db->query($query, [
     'email' => $email
 ])->find();
 
-if($user) {
+if ($user) {
     // user is already registered and email exists in database
     if (password_verify($password, $user['password'])) {
         // check if password is correct and log in
