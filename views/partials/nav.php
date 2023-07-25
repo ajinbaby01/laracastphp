@@ -63,6 +63,15 @@
                             <?php endif; ?>
                         </div>
                     </div>
+                    <?php if ($_SESSION['user'] ?? false): ?>
+                        <div class="ml-3 text-gray-300">
+                            <form action="/session" method="POST">
+                                <!-- Deleting a user using DELETE method -->
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button>Log out</button>
+                            </form>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
 
