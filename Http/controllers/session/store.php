@@ -6,22 +6,20 @@ use Http\Forms\LoginForm;
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$form = new LoginForm();
-if (!$form->validate($email, $password)) {
-    return view("session/create.view.php", [
-        'errors' => $form->getErrors()
-    ]);
+$loginForm = new LoginForm();
+
+if ($loginForm->validate($email, $password)) {
+    $auth = new Authenticator();
+
+    if ($auth->attempt($email, $password)) {
+        redirect('/');
+    } else {
+        $loginForm->setErrors('password', 'Account with that email address and password is not found');
+    }
 }
 
-$auth = new Authenticator();
-if ($auth->attempt($email, $password)) {
-    redirect('/');
-} else {
-    return view('session/create.view.php', [
-        'errors' => [
-            'password' => "Account with that email address and password is not found"
-        ]
-    ]);
-}
+return view("session/create.view.php", [
+    'errors' => $loginForm->getErrors()
+]);
 
 ?>

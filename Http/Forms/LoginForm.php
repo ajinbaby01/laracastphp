@@ -20,6 +20,11 @@ class LoginForm
         return empty($this->errors);
     }
 
+    public function setErrors($field, $message)
+    {
+        $this->errors[$field] = $message;
+    }
+
     public function getErrors()
     {
         return $this->errors;
