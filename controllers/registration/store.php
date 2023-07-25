@@ -41,7 +41,7 @@ if ( $user) {
     $query = "insert into users(email, password) values(:email, :password)";
     $db->query($query, [
         'email' => $email,
-        'password' => $password
+        'password' => password_hash($password, PASSWORD_DEFAULT)
     ]);
 
     $_SESSION['logged_in'] = true;
