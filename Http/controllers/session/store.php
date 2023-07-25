@@ -13,9 +13,10 @@ if ($loginForm->validate($email, $password)) {
 
     if ($auth->attempt($email, $password)) {
         redirect('/');
-    } else {
-        $loginForm->setErrors('password', 'Account with that email address and password is not found');
     }
+    
+    $loginForm->setErrors('password', 'Account with that email address and password is not found');
+
 }
 
 return view("session/create.view.php", [
