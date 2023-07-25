@@ -7,10 +7,10 @@ function isUrl($value)
     return parse_url($_SERVER['REQUEST_URI'])['path'] == $value;
 }
 
-function dd($array)
+function dd($value)
 {
     echo '<pre>';
-    var_dump($array);
+    var_dump($value);
     echo '</pre>';
     exit;
 }
