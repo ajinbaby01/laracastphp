@@ -32,6 +32,11 @@ class Session
     {
         unset($_SESSION['_flash']);
     }
+
+    public static function flush()
+    {
+        $_SESSION = [];
+    }
 }
 
 ?>

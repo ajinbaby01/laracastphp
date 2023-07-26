@@ -1,6 +1,7 @@
 <?php
 
 namespace Core;
+use Core\Session;
 
 class Authenticator
 {
@@ -38,7 +39,7 @@ class Authenticator
 
     public static function logout()
     {
-        $_SESSION = []; // clear the $_SESSION superglobal
+        Session::flush(); // clear the $_SESSION superglobal
         session_destroy();
 
         $params = session_get_cookie_params();

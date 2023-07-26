@@ -21,6 +21,7 @@ if ($loginForm->validate($email, $password)) {
 }
 
 Session::flash('errors', $loginForm->getErrors());
+
 redirect('/login');
 
 // return view("session/create.view.php", [
