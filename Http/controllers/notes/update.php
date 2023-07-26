@@ -1,6 +1,5 @@
 <?php
 
-// This controller is responsible for showing the 'Edit a Note' page
 use Core\App;
 use Core\Validator;
 
@@ -36,6 +35,8 @@ if (empty($errors)) {
     redirect('/notes');
 
 }
+
+$note['body'] = $_POST['body']; // persisting entered form data
 
 view('notes/edit.view.php', [
     'heading' => 'Edit Note',
