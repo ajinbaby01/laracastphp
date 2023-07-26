@@ -17,7 +17,6 @@ if ($loginForm->validate($email, $password)) {
     }
 
     $loginForm->setErrors('password', 'Account with that email address and password is not found');
-
 }
 
 Session::flash('old', [
