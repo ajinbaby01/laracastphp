@@ -11,6 +11,7 @@ class CreateANoteForm
     protected $errors = [];
     public function validate($noteBody)
     {
+        // TODO: Change function similar to LoginForm.php
         if (!Validator::string($_POST['body'], 1, 1000)) {
             $this->errors['body'] = 'A body of no more than 1000 characters is required';
         }

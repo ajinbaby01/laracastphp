@@ -12,6 +12,7 @@ class RegisterForm
     protected $errors = [];
     public function validate($email, $password)
     {
+        // TODO: Change function similar to LoginForm.php
         if (!Validator::email($email)) {
             $this->errors['email'] = 'Please provide a valid email address';
         }

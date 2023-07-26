@@ -20,6 +20,8 @@ Session::flash('errors', $noteForm->getErrors());
 
 redirect('/notes/create');
 
+// TODO : Make this file similar to Http/controllers/session/store.php
+
 // return view('notes/create.view.php', [
 //     'heading' => 'Create a Note',
 //     'errors' => $noteForm->getErrors()

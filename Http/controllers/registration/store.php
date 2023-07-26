@@ -27,6 +27,8 @@ Session::flash('errors', $registerForm->getErrors());
 
 redirect('/register');
 
+// TODO : Make this file similar to Http/controllers/session/store.php
+
 // return view("registration/create.view.php", [
 //     'errors' => $registerForm->getErrors()
 // ]);
