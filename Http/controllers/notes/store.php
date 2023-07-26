@@ -1,6 +1,7 @@
 <?php
 
 // This controller is responsible for inserting user notes into the 'notes' database
+use Core\Session;
 use Http\Forms\CreateANoteForm;
 
 $noteBody = $_POST['body'];
@@ -12,9 +13,16 @@ if($noteForm->validate($noteBody)){
 }
 
 //validation issue
-return view('notes/create.view.php', [
-    'heading' => 'Create a Note',
-    'errors' => $noteForm->getErrors()
+Session::flash('old', [
+    'note' => $noteBody
 ]);
+Session::flash('errors', $noteForm->getErrors());
+
+redirect('/notes/create');
+
+// return view('notes/create.view.php', [
+//     'heading' => 'Create a Note',
+//     'errors' => $noteForm->getErrors()
+// ]);
 
 ?>
