@@ -20,6 +20,9 @@ if ($loginForm->validate($email, $password)) {
 
 }
 
+Session::flash('old', [
+    'email' => $email
+]);
 Session::flash('errors', $loginForm->getErrors());
 
 redirect('/login');
@@ -27,5 +30,6 @@ redirect('/login');
 // return view("session/create.view.php", [
 //     'errors' => $loginForm->getErrors()
 // ]);
+// This method submitted form twice when refreshing. Better to redirect.
 
 ?>
