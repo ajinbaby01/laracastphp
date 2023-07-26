@@ -15,7 +15,8 @@ $signedIn = (new Authenticator)->attempt(
 );
 
 if (!$signedIn) {
-    $loginForm->setErrors('password', 'Account with that email address and password is not found')->throw();
+    $loginForm->setErrors('password', 'Account with that email address and password is not found');
+    $loginForm->throw();
 }
 
 redirect('/');

@@ -33,7 +33,6 @@ class LoginForm
     public function setErrors($field, $message)
     {
         $this->errors[$field] = $message;
-        return $this;
     }
 
     public function getErrors()
