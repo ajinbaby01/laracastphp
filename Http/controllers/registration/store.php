@@ -1,5 +1,6 @@
 <?php
 
+use Core\Session;
 use Http\Forms\RegisterForm;
 
 $email = $_POST['email'];
@@ -18,8 +19,16 @@ if ($registerForm->validate($email, $password)) { // check if entered email and 
     $registerForm->setErrors('email', 'Email address is already registered. Please login.');
 }
 
-return view("registration/create.view.php", [
-    'errors' => $registerForm->getErrors()
+Session::flash('old', [
+    'email' => $email
 ]);
+
+Session::flash('errors', $registerForm->getErrors());
+
+redirect('/register');
+
+// return view("registration/create.view.php", [
+//     'errors' => $registerForm->getErrors()
+// ]);
 
 ?>
