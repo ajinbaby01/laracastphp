@@ -1,0 +1,16 @@
+{
+    "name": "ajin.baby/laracastphp",
+    "authors": [
+        {
+            "name": "ajinbaby01",
+            "email": "ajin.baby@bankopen.co"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}

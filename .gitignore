@@ -5,5 +5,8 @@ temp/
 .DS_Store
 
 *.json
+!composer.json
 
 *.code-workspace
+
+/vendor/
